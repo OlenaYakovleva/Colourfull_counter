@@ -1,12 +1,30 @@
-# React + Vite
+<!-- Завдання: Інтерактивний лічильник
+Створіть просту React-програму, яка демонструє ваше розуміння компонентів та хука useState. Ви побудуєте програму-лічильник з кількома інтерактивними функціями.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Вимоги:
+Головний компонент лічильника
 
-Currently, two official plugins are available:
+Створіть компонент лічильника, який відображає число
+Додайте кнопки для збільшення та зменшення значення
+Використовуйте хук useState для управління значенням лічильника
+Функція скидання
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Додайте кнопку, яка скидає лічильник до нуля
+Історія лічильника
 
-## Expanding the ESLint configuration
+Відображайте список останніх 5 значень лічильника
+Оновлюйте список кожного разу, коли змінюється лічильник
+Використовуйте useState для управління цим масивом історії
+Стилізація
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Додайте базовий CSS, щоб зробити вашу програму візуально привабливою
+Стилізуйте кнопки та відображення лічильника
+Додаткові завдання:
+Додайте кнопку-перемикач, яка змінює колір лічильника
+Створіть другий незалежний компонент лічильника і відобразіть обидва на сторінці
+Вказівки щодо подання:
+Створіть новий проект React
+Реалізуйте всі необхідні функції
+Додайте коментарі, що пояснюють ваш код, особливо як ви використовуєте useState
+Надішліть файли вашого проекту або посилання на ваш репозиторій
+Це завдання допоможе вам практикувати створення функціональних компонентів, управління станом за допомогою useState та обробку взаємодії з користувачем у React. -->

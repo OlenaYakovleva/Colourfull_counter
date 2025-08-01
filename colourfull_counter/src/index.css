@@ -103,3 +103,30 @@ button:hover {
   border-radius: 4px;
   font-size: 0.9rem;
 }
+/* Text color for number */
+.blue {
+  color: blue;
+}
+
+.red {
+  color: red;
+}
+
+
+/* Background color for the button */
+.blue-bg {
+  background-color: rgb(25, 22, 196);
+  color: white;
+}
+
+.red-bg {
+  background-color: rgb(223, 38, 38);
+  color: white;
+}
+
+
+
+
+
+
+

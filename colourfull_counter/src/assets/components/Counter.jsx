@@ -1,52 +1,78 @@
 import { useState } from "react";
 
-
-
-
 export function Counter() {
-    return (
-      <div className="counter">
-        <div className="counter-value blue">0</div>
-  
-        <div className="counter-controls">
-          <button className="decrease">-1</button>
-          <button className="increase">+1</button>
-        </div>
-  
-        <div className="counter-controls">
-          <button className="reset">Reset</button>
-          <button className="toggle-color">Change the colour</button>
-        </div>
-  
-        <div className="history">
-          <h3>Last 5 changes done:</h3>
-          <ul className="history-list">
-            <li>History is empty</li>
-          </ul>
-        </div>
+  const [count, setCount] = useState(0);
+  const [color, setColor] = useState("blue");
+  const [history, setHistory] = useState([]);
+
+  const updateHistory = (newCount) => {
+    setHistory(prev => {
+      const newHistory = [newCount, ...prev];
+      return newHistory.slice(0, 5); // only keep last 5 numbers
+    });
+  };
+
+  const increase = () => {
+    setCount(prev => {
+      const updated = prev + 1;
+      updateHistory(updated);
+      return updated;
+    });
+  };
+
+  const decrease = () => {
+    setCount(prev => {
+      const updated = prev - 1;
+      updateHistory(updated);
+      return updated;
+    });
+  };
+
+  const reset = () => {
+    setCount(0);
+    setHistory([]); // clear history completely
+  };
+
+  const toggleColor = () => {
+    setColor(prev => (prev === "blue" ? "red" : "blue"));
+  };
+
+  return (
+    <div className="counter">
+      <h2 className="counter-title">Colourful Counter</h2>
+
+      <div className={`counter-value ${color}`}>{count}</div>
+
+      <div className="counter-controls">
+        <button className="decrease" onClick={decrease}>-1</button>
+        <button className="increase" onClick={increase}>+1</button>
       </div>
-    );
-  }
 
+      <div className="counter-controls">
+        <button className="reset" onClick={reset}>Reset</button>
 
-//   3. Компонент, що використовує контекст
-// function ThemedButton() {
-//   // Отримання даних з контексту
-//   const { theme, toggleTheme } = useContext(ThemeContext);
+        <button
+          className={`${color}-bg`}
+          onClick={toggleColor}
+        >
+          Change the colour
+        </button>
+      </div>
 
-//   return (
-//     <button
-//       onClick={toggleTheme}
-//       style={{
-//         backgroundColor: theme === 'light' ? '#fff' : '#333',
-//         color: theme === 'light' ? '#333' : '#fff',
-//         padding: '10px 20px',
-//         border: '1px solid #ccc',
-//         borderRadius: '4px',
-//         cursor: 'pointer'
-//       }}
-//     >
-//       Поточна тема: {theme}. Змінити тему
-//     </button>
-//   );
-// }
+      <span className={`color-label blue ${color}`}>Current color: {color}</span>
+
+      <div className="history">
+        <h3>Last 5 numbers:</h3>
+        <ul className="history-list">
+          {history.length === 0 ? (
+            <li>History is empty</li>
+          ) : (
+            history.map((num, index) => (
+              <li key={index}>: {num}</li>
+            ))
+          )}
+        </ul>
+      </div>
+    </div>
+  );
+}
